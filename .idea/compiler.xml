@@ -7,23 +7,38 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="changgou-service-goods" />
-        <module name="changgou-common-db" />
         <module name="changgou-service-goods-api" />
+        <module name="changgou-core-service" />
+        <module name="changgou-user-oauth" />
+        <module name="changgou-core-controller" />
+        <module name="changgou-common-db" />
+        <module name="code-template" />
         <module name="changgou-common-eureka" />
         <module name="changgou-common" />
+        <module name="changgou-service-file" />
+        <module name="changgou-servie-file" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="changgou-servie-file" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="changgou-common" options="-parameters" />
       <module name="changgou-common-db" options="-parameters" />
       <module name="changgou-common-eureka" options="-parameters" />
+      <module name="changgou-core" options="-parameters" />
+      <module name="changgou-core-controller" options="-parameters" />
+      <module name="changgou-core-service" options="-parameters" />
       <module name="changgou-getway" options="-parameters" />
       <module name="changgou-service" options="-parameters" />
       <module name="changgou-service-api" options="-parameters" />
+      <module name="changgou-service-file" options="-parameters" />
       <module name="changgou-service-goods" options="-parameters" />
       <module name="changgou-service-goods-api" options="-parameters" />
+      <module name="changgou-servie-file" options="-parameters" />
+      <module name="changgou-user-oauth" options="-parameters" />
       <module name="changgou-web" options="-parameters" />
     </option>
   </component>

@@ -15,6 +15,7 @@
         <module>changgou-service-api</module>
         <module>changgou-getway</module>
         <module>changgou-web</module>
+        <module>changgou-core</module>
     </modules>
     <packaging>pom</packaging>
     <description>畅购的版本统一管理的所有工程父工程</description>
