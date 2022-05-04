@@ -3,6 +3,7 @@ package com.changgou.goods.controller;
 import com.changgou.core.AbstractCoreController;
 import com.changgou.goods.pojo.Sku;
 import com.changgou.goods.service.SkuService;
+import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;

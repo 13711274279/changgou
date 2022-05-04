@@ -25,7 +25,7 @@ public class Para implements Serializable{
 	private Integer seq;//排序
 
     @Column(name = "template_id")
-	private Integer templateId;//模板ID
+	private Integer template_id;//模板ID
 
 
 
@@ -67,12 +67,12 @@ public class Para implements Serializable{
 	}
 	//get方法
 	public Integer getTemplateId() {
-		return templateId;
+		return template_id;
 	}
 
 	//set方法
 	public void setTemplateId(Integer templateId) {
-		this.templateId = templateId;
+		this.template_id = templateId;
 	}
 
 

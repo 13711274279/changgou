@@ -9,5 +9,4 @@ SelectService<T> {
     public T selectByPrimaryKey(Object id);
 
     public List<T> select(T record);
-
 }

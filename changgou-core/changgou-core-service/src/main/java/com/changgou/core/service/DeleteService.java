@@ -27,4 +27,6 @@ public interface DeleteService<T> {
     int deleteById(Object id);
 
 
+    interface InsertListService {
+    }
 }

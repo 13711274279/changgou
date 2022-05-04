@@ -64,21 +64,21 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
         //内存配置
-        clients.inMemory()
-                .withClient("changgou")//客户端ID
-                .secret(passwordEncoder.encode("changgou"))//客户端秘钥 注意需要加密存储
-                .authorizedGrantTypes(
-                        "authorization_code",//授权码模式
-                        "refresh_token",//刷新令牌
-                        "password",//密码认证
-                        "client_credentials" //客户端认证
-                )
-                .redirectUris("http://localhost")
-                .refreshTokenValiditySeconds(3600)
-                .accessTokenValiditySeconds(3600)
-                .scopes("app");
+//        clients.inMemory()
+//                .withClient("changgou")//客户端ID
+//                .secret(passwordEncoder.encode("changgou"))//客户端秘钥 注意需要加密存储
+//                .authorizedGrantTypes(
+//                        "authorization_code",//授权码模式
+//                        "refresh_token",//刷新令牌
+//                        "password",//密码认证
+//                        "client_credentials" //客户端认证
+//                )
+//                .redirectUris("http://192.168.3.27")
+//                .refreshTokenValiditySeconds(3600)
+//                .accessTokenValiditySeconds(3600)
+//                .scopes("app");
         //数据库方式配置客户端
-        //clients.jdbc(dataSource).clients(jdbcClientDetailsService);
+        clients.jdbc(dataSource).clients(jdbcClientDetailsService);
 
     }
 

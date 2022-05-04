@@ -1,6 +1,5 @@
 package com.changgou.core.service;
 
-import tk.mybatis.mapper.common.Mapper;
 
 public interface CoreService <T> extends
         DeleteService<T>,

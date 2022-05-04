@@ -14,6 +14,8 @@
     <description>所有的api(pojo，feign）所在的父工程，聚合工程，方便同一管理所有的pojo和feign</description>
     <modules>
         <module>changgou-service-goods-api</module>
+        <module>changgou-service-user-api</module>
+        <module>changgou-service-order-api</module>
     </modules>
 
     <dependencies>
@@ -30,6 +32,21 @@
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.changgou</groupId>
+            <artifactId>changgou-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

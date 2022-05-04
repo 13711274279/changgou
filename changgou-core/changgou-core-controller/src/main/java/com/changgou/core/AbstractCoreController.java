@@ -56,7 +56,7 @@ public abstract class AbstractCoreController<T>  implements ICoreController<T> {
 
     @GetMapping("/{id}")
     @Override
-    public Result<T> finById(Object id) {
+    public Result<T> findById(@PathVariable(name = "id") Object id) {
         T t = coreService.selectByPrimaryKey(id);
         return new Result<T>(true, StatusCode.OK, "查询单个数据成功", t);
     }

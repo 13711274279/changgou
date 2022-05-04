@@ -27,7 +27,7 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public Map<String, String> login(String username, String password, String grantType, String clientId, String clientSecret) {
         //模拟POST发送请求
-        String url = "http://localhost:9001/oauth/token";
+        String url = "http://192.168.3.27:9001/oauth/token";
         //请求体
         MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
         body.add("username",username);

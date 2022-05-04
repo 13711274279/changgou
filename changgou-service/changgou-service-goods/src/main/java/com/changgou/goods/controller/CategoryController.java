@@ -1,16 +1,14 @@
 package com.changgou.goods.controller;
 
 import com.changgou.core.AbstractCoreController;
+import com.changgou.goods.pojo.Brand;
 import com.changgou.goods.pojo.Category;
 import com.changgou.goods.service.CategoryService;
 import entity.Result;
 import entity.StatusCode;
 import jdk.net.SocketFlow;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 

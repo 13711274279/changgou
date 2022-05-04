@@ -1,8 +1,8 @@
 package com.changgou.goods.pojo;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.omg.CORBA.IDLType;
+
+import javax.persistence.*;
 import java.io.Serializable;
 /****
  * @Author:admin
@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Spu implements Serializable{
 
 	@Id
-    @Column(name = "id")
+	@Column(name = "id")
 	private Long id;//主键
 
     @Column(name = "sn")
