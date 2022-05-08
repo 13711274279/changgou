@@ -2,6 +2,9 @@ package com.changgou.user.service;
 
 import com.changgou.core.service.CoreService;
 import com.changgou.user.pojo.Address;
+
+import java.util.List;
+
 /****
  * @Author:admin
  * @Description:Address业务层接口
@@ -9,4 +12,5 @@ import com.changgou.user.pojo.Address;
  *****/
 public interface AddressService extends CoreService<Address> {
 
+    List<Address> list(String username);
 }

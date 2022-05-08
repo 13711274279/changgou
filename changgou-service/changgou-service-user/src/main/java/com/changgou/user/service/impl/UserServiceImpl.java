@@ -22,4 +22,10 @@ public class UserServiceImpl extends CoreServiceImpl<User> implements UserServic
         super(userMapper, User.class);
         this.userMapper = userMapper;
     }
+
+    @Override
+    public Integer addPoints(String username, Integer points) {
+
+        return userMapper.addPoints(username, points);
+    }
 }

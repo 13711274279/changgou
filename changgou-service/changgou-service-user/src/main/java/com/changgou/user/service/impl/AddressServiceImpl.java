@@ -7,6 +7,8 @@ import com.changgou.user.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /****
  * @Author:admin
  * @Description:Address业务层接口实现类
@@ -21,5 +23,10 @@ public class AddressServiceImpl extends CoreServiceImpl<Address> implements Addr
     public AddressServiceImpl(AddressMapper addressMapper) {
         super(addressMapper, Address.class);
         this.addressMapper = addressMapper;
+    }
+
+    @Override
+    public List<Address> list(String username) {
+        return addressMapper.list(username);
     }
 }

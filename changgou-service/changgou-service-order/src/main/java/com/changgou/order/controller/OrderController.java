@@ -1,12 +1,13 @@
 package com.changgou.order.controller;
 
 import com.changgou.core.AbstractCoreController;
+import com.changgou.order.config.TokenDecode;
 import com.changgou.order.pojo.Order;
 import com.changgou.order.service.OrderService;
+import entity.Result;
+import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /****
  * @Author:admin
@@ -19,11 +20,26 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class OrderController extends AbstractCoreController<Order>{
 
+    @Autowired
     private OrderService  orderService;
+
+    @Autowired
+    private TokenDecode tokenDecode;
+
 
     @Autowired
     public OrderController(OrderService  orderService) {
         super(orderService, Order.class);
         this.orderService = orderService;
+    }
+
+    @PostMapping("/add")
+    public Result add(@RequestBody Order order){
+        //1、现获取登录或用户名
+        String userName = tokenDecode.getUserName();
+        order.setUsername(userName);
+        //2、添加数据到订单表和订单选表中
+        orderService.add(order);
+        return new Result(true, StatusCode.OK,"创建订单成功");
     }
 }

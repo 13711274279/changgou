@@ -2,18 +2,13 @@ package com.changgou.user.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.changgou.core.AbstractCoreController;
-import com.changgou.user.feign.UserFeign;
 import com.changgou.user.pojo.User;
 import com.changgou.user.service.UserService;
-import com.mysql.cj.log.Log;
-import entity.BCrypt;
 import entity.JwtUtil;
 import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.loadbalancer.reactive.CompletionContext;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.spring.web.json.Json;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -72,6 +67,17 @@ public class UserController extends AbstractCoreController<User>{
     Result<User> findById(@PathVariable(name = "id")String id){
         User user = userService.selectByPrimaryKey(id);
         return new Result(true, StatusCode.OK, "查询成功", user);
+    }
+
+    @GetMapping("/points/add")
+    public Result addPoints(@RequestParam(name = "username") String username,
+                            @RequestParam(name = "points") Integer points){
+        Integer count  =- userService.addPoints(username, points);
+        if(count>0){
+            return new Result(true, StatusCode.OK, "更新成功");
+        }else {
+            return new Result(false, StatusCode.OK, "更新失败");
+        }
     }
 
 }

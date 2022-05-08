@@ -9,4 +9,6 @@ import com.changgou.order.pojo.Order;
  *****/
 public interface OrderService extends CoreService<Order> {
 
+    void add(Order order);
+
 }

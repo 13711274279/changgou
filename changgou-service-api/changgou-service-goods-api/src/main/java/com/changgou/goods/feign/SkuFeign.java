@@ -5,6 +5,7 @@ import entity.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -17,4 +18,7 @@ public interface SkuFeign {
     // 根据sku的ID 获取sku数据
     @GetMapping("/{id}")
     public Result<Sku> findById(@PathVariable(name = "id") Object id);
+
+    @GetMapping("/decCount")
+    public Result decCount(@RequestParam(name = "id") Long id, @RequestParam(name = "num") Integer num);
 }

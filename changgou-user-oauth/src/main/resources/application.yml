@@ -13,6 +13,8 @@ spring:
     password: 123456
   main:
     allow-bean-definition-overriding: true
+  thymeleaf:
+    cache: false # 去除缓存
 eureka:
   instance:
     prefer-ip-address: true
@@ -23,7 +25,7 @@ auth:
   ttl: 3600  #token存储到redis的过期时间
   clientId: changgou
   clientSecret: changgou
-  cookieDomain: localhost
+  cookieDomain: 192.168.3.27
   cookieMaxAge: -1
 jks:
   name: changgou.jks

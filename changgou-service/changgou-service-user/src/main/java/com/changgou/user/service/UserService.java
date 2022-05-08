@@ -9,4 +9,5 @@ import com.changgou.user.pojo.User;
  *****/
 public interface UserService extends CoreService<User> {
 
+    Integer addPoints(String username, Integer points);
 }

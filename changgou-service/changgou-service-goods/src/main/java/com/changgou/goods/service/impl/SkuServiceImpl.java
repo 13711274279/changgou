@@ -23,4 +23,9 @@ public class SkuServiceImpl extends CoreServiceImpl<Sku> implements SkuService {
         super(skuMapper, Sku.class);
         this.skuMapper = skuMapper;
     }
+
+    @Override
+    public Integer deCount(Long id, Integer num) {
+        return skuMapper.decCount(id, num);
+    }
 }

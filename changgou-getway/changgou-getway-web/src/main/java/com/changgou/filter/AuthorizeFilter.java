@@ -35,7 +35,10 @@ public class AuthorizeFilter implements GlobalFilter, Ordered {
             }
         }
         if(StringUtils.isEmpty(token)){
-            response.setStatusCode(HttpStatus.UNAUTHORIZED);
+            // 直接返回401
+            // 重定向到登录的页面 303 302
+            response.getHeaders().set("Location", "http://192.168.3.27:9001/oauth/login?url="+request.getURI());
+            response.setStatusCode(HttpStatus.SEE_OTHER);
             return response.setComplete();
         }
 //        try {
